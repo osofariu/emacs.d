@@ -123,4 +123,3 @@
 (global-evil-leader-mode)
 (require 'evil-org)
 
-;;(require 'org-mac-link) 
