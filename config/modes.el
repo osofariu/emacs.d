@@ -6,15 +6,14 @@
 ;;; Add locations to load-path
 (add-to-list 'load-path "/usr/share/emacs/site-lisp")
 (add-to-list 'load-path "~/elisp/")
+;; ?
 (add-to-list 'load-path "/Users/ovi/.emacs.d/elpa/sml-mode-6.5")
 (add-to-list 'load-path "/Users/ovi/.emacs.d/elpa/emacs-evil-bootstrap")
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
 ;;; text-mode
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook
   '(lambda() (set-fill-column 80)))
-
 
 ;; enable smooth scrolling from smooth-scroll.el
 (require 'smooth-scroll)
@@ -30,9 +29,6 @@
 ;; ido mode for managing buffers
 (require 'ido)
 (ido-mode t)
-
-;; evil mode
-;(load "init.el")
 
 ;; markdown mode
 (load "markdown-mode.el")
@@ -65,6 +61,7 @@
 (setq org-agenda-file-regexp "\\`[^.].*\\.org\\|.todo\\'")
 (setq org-agenda-skip-unavailable-files t)
 (setq org-agenda-skip-scheduled-if-done t)
+
 ;; org-present
 (autoload 'org-present "org-present" nil t)
 
@@ -82,20 +79,13 @@
                  (org-remove-inline-images)
                  (org-present-show-cursor)
                  (org-present-read-write)))))
-;; pretty-print xml
-;(load "xml-indent.el")
-
-;; abbrev mode
-
-;(setq default-abbrev-mode t)
 
 (require 'epa-file)
 (setq epa-file-cache-passphrase-for-symmetric-encryption 't)
 (setq epa-file-encrypt-to: "ovi@sofariu.com")
 
-;; setup files ending in “.gpg” to open in ogr-mode
+;; setup files ending in “.gpg” to open in org-mode
 (add-to-list 'auto-mode-alist '("\\.gpg\\'" . org-mode))
-;(add-to-list ‘exec-path “/usr/local/bin”)
 
 (setq custom-file "~/.emacs.d/custom.el")
 
@@ -116,11 +106,9 @@
   (add-hook hook (lambda () (flyspell-mode -1))))
 
 (setq evil-emacs-state-cursor '(box "green")
-;;      evil-insert-state-cursor '((bar . 5) "yellow")
       evil-normal-state-cursor '(box "purple"))
 
 (evil-mode)
 (global-evil-leader-mode)
 (require 'evil-org)
 
-;;(require 'org-mac-link) 
