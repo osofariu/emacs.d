@@ -3,28 +3,18 @@
 (show-paren-mode 1)
 (column-number-mode)
 
-;;; Add locations to load-path
-(add-to-list 'load-path "/usr/share/emacs/site-lisp")
-(add-to-list 'load-path "~/elisp/")
-;; ?
-(add-to-list 'load-path "/Users/ovi/.emacs.d/elpa/sml-mode-6.5")
-(add-to-list 'load-path "/Users/ovi/.emacs.d/elpa/emacs-evil-bootstrap")
-
 ;;; text-mode
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook
-  '(lambda() (set-fill-column 80)))
+  '(lambda() (set-fill-column 110)))
 
-;; enable smooth scrolling from smooth-scroll.el
+;; smooth-scrolling
 (require 'smooth-scroll)
 (smooth-scroll-mode 't)
 (setq mouse-wheel-progressive-speed 'f) ;; don't accelerate scrolling
 (setq smooth-scroll-mode 't)
 (setq smooth-scroll/hscroll-step-size 10)
 (setq smooth-scroll/vscroll-step-size 10)
-
-;; sml mode
-(load "sml-mode-autoloads.el")
 
 ;; ido mode for managing buffers
 (require 'ido)
