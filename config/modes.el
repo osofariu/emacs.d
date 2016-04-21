@@ -6,7 +6,7 @@
 ;;; text-mode
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook
-  '(lambda() (set-fill-column 110)))
+  '(lambda() (set-fill-column 90)))
 
 ;; smooth-scrolling
 (require 'smooth-scroll)
@@ -29,28 +29,30 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
+(setq org-archive-location (concat org-archive-dir "/%s_archive::*"))
 
 (add-hook 'org-mode-hook
           (lambda ()
             (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link)
-            (set-fill-column 110)))
+            (set-fill-column 90)))
 
 ;; mobileorg settings
-(setq org-directory "~/Dropbox/notes")
-(setq org-mobile-inbox-for-pull "~/Dropbox/notes/inbox.org")
-(setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
-(setq org-mobile-files '("~/Dropbox/notes" "~/Dropbox/notes/proj"))
-(setq org-return-follows-link 'RET)
-(setq org-log-repeat 'nil)
-(setq org-agenda-files
-      (append
-       (file-expand-wildcards "~/Dropbox/notes/x-*.org")
-       (file-expand-wildcards "~/Dropbox/notes/daily-journal.org")
-       (file-expand-wildcards "~/Dropbox/notes/proj/x-*.org")))
-
-(setq org-agenda-file-regexp "\\`[^.].*\\.org\\|.todo\\'")
-(setq org-agenda-skip-unavailable-files t)
-(setq org-agenda-skip-scheduled-if-done t)
+(cond (is-home-machine
+       (setq org-mobile-inbox-for-pull "~/Dropbox/notes/inbox.org")
+       (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+       (setq org-mobile-files '("~/Dropbox/notes" "~/Dropbox/notes/proj"))
+       (setq org-return-follows-link 'RET)
+       (setq org-log-repeat 'nil)
+       (setq org-agenda-files
+             (append
+              (file-expand-wildcards "~/Dropbox/notes/x-*.org")
+              (file-expand-wildcards "~/Dropbox/notes/daily-journal.org")
+              (file-expand-wildcards "~/Dropbox/notes/proj/x-*.org")))
+       (setq org-agenda-file-regexp "\\`[^.].*\\.org\\|.todo\\'")
+       (setq org-agenda-skip-unavailable-files t)
+       (setq org-agenda-skip-scheduled-if-done t)
+       )
+      )
 
 ;; org-present
 (autoload 'org-present "org-present" nil t)
@@ -77,8 +79,7 @@
 ;; setup files ending in “.gpg” to open in org-mode
 (add-to-list 'auto-mode-alist '("\\.gpg\\'" . org-mode))
 
-(setq custom-file "~/.emacs.d/custom.el")
-
+; scheme and gradle modes for files:
 (add-to-list 'auto-mode-alist '("\\.gradle" . groovy-mode))
 (add-to-list 'auto-mode-alist '("\\.rkt" . scheme-mode))
 

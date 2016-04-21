@@ -1,3 +1,15 @@
+(cond ((equal (system-name) "Cato.local") ;; HOME
+       (setq is-home-machine 't)
+       (setq org-directory "~/Dropbox/notes")
+       (setq org-archive-dir "/Users/ovi/Dropbox/notes/archive"))
+      
+      ((equal (system-name) "Oliver.local") ;; WORK
+       (setq is-home-machine nil)
+       (setq org-directory "~/Dropbox/notes-work")
+       (setq org-archive-dir "/Users/ovi/Dropbox/notes-work/archive")))
+
+(setq custom-file "~/.emacs.d/custom.el")
+
 (require 'server)
 (unless (server-running-p)
   (server-start))
