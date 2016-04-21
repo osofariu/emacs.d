@@ -36,6 +36,9 @@
             (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link)
             (set-fill-column 90)))
 
+(setq org-default-notes-file (concat org-directory "/notes.org"))
+(define-key global-map "\C-cc" 'org-capture)
+
 ;; mobileorg settings
 (cond (is-home-machine
        (setq org-mobile-inbox-for-pull "~/Dropbox/notes/inbox.org")
