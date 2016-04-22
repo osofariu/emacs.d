@@ -29,7 +29,7 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
-(setq org-archive-location (concat org-archive-dir "/%s_archive::*"))
+(setq org-archive-location (concat org-archive-dir "/%s_archive::"))
 
 (add-hook 'org-mode-hook
           (lambda ()
@@ -38,6 +38,11 @@
 
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
+
+(setq org-refile-targets '((nil :maxlevel . 9)
+                                (org-agenda-files :maxlevel . 9)))
+(setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
+(setq org-refile-use-outline-path t)                  ; Show full paths for refiling
 
 ;; mobileorg settings
 (cond (is-home-machine
