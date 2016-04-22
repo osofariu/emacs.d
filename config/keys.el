@@ -14,7 +14,7 @@
 
 ;(add-hook 'org-mode-hook
 ;         (lambda () (if (file-name-extension (buffer-file-name))
- ;                       (local-set-key (kbd "C-x s") 'save-encrypt))))
+;                       (local-set-key (kbd "C-x s") 'save-encrypt))))
 
 
 (fset 'insert-after-node
@@ -28,13 +28,6 @@
 ;; editing
 (setq-default indent-tabs-mode nil)
 
-;;  Control-Z
-;;  http://www.emacswiki.org/emacs/KeyBindingDiscussion
-
-; re-map CTRL-Z
-;(global-unset-key [(control z)])
-;(global-unset-key [(control x)(control z)])
-;(global-set-key [(control z)] 'undo)
 
 (global-set-key [(control c) (control r)] 'reload-current-buffer)
 
@@ -63,3 +56,6 @@
      (define-key flyspell-mouse-map [mouse-3] #'undefined)))
 
 (global-set-key (kbd "<f9>") 'ispell)
+
+;; magit
+(global-set-key [(control c)(control g)] 'magit-status)

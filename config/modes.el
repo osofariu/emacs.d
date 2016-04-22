@@ -44,6 +44,10 @@
 (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
 (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
 
+; add support for export to markdown
+(eval-after-load "org"
+  '(require 'ox-md nil t))
+
 ;; mobileorg settings
 (cond (is-home-machine
        (setq org-mobile-inbox-for-pull "~/Dropbox/notes/inbox.org")
