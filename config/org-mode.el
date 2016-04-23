@@ -18,8 +18,8 @@
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
 
-(setq org-refile-targets '((nil :maxlevel . 9)
-                                (org-agenda-files :maxlevel . 9)))
+(setq org-refile-targets '((nil :maxlevel . 4)
+                                (org-agenda-files :maxlevel . 4)))
 (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
 (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
 
@@ -27,7 +27,7 @@
 (cond (is-home-machine
        (setq org-mobile-inbox-for-pull "~/Dropbox/notes/inbox.org")
        (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
-       (setq org-mobile-files '("~/Dropbox/notes" "~/Dropbox/notes/proj"))
+       (setq org-mobile-files '("~/Dropbox/notes" "~/Dropbox/notes/z-proj"))
        (setq org-return-follows-link 'RET)
        (setq org-log-repeat 'nil)
        (setq org-agenda-files

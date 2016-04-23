@@ -1,21 +1,16 @@
 (add-to-list 'default-frame-alist '(font . "Monaco-12"))
-;;(set-default-font "Monaco-12")
 
 (cond ((equal (system-name) "Cato.local") ;; HOME
        (setq is-home-machine 't)
        (setq org-directory "~/Dropbox/notes")
        (setq org-archive-dir "~/Dropbox/notes/archive"))
       
-      ((equal (system-name) "Oliver.local") ;; WORK
+      ((equal (substring (system-name) 0 6) "Oliver") ;; WORK
        (setq is-home-machine nil)
        (setq org-directory "~/Dropbox/notes-work")
        (setq org-archive-dir "~/Dropbox/notes-work/archive")))
 
 (setq custom-file "~/.emacs.d/custom.el")
-
-(require 'server)
-(unless (server-running-p)
-  (server-start))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -29,8 +24,12 @@
 ;; color-theme
 ;(require 'color-theme)
          
+(setq ess-r-versions nil) ;; *BEFORE* ess-site is loaded (!)
+
 (load "~/.emacs.d/functions.el")
 (load "~/.emacs.d/abbrevs.el")
 (load-directory "~/.emacs.d/config")
 
-
+(require 'server)
+(unless (server-running-p)
+  (server-start))

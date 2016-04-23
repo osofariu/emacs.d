@@ -83,8 +83,8 @@ Uses `current-date-format' for the formatting the date/time."
 
 (defun lispy-parens ()
   "Setup parens display for lisp modes"
-  (setq show-paren-delay 0)
-  (setq show-paren-style 'parenthesis)
+  (setq show-paren-delay 0.1)
+  (setq show-paren-style 'mixed)
   (make-variable-buffer-local 'show-paren-mode)
   (show-paren-mode 1)
   (set-face-background 'show-paren-match-face (face-background 'default))
@@ -93,12 +93,15 @@ Uses `current-date-format' for the formatting the date/time."
      			   (face-foreground 'font-lock-comment-face))
     (set-face-foreground 'show-paren-match-face 
      			 (face-foreground 'default)))
-  (set-face-attribute 'show-paren-match-face nil :weight 'extra-bold)) 
+  (set-face-attribute 'show-paren-match-face nil :weight 'ultra-bold)) 
 
 (require 'paren)
+(setq show-paren-style 'mixed)
 (set-face-background 'show-paren-match (face-background 'default))
 (set-face-foreground 'show-paren-match "#def")
-(set-face-attribute 'show-paren-match nil :weight 'extra-bold)
+(set-face-attribute 'show-paren-match nil :weight 'ultra-bold)
+(set-face-attribute 'show-paren-match nil :foreground "dark gray")
+;(set-face-attribute 'show-paren-match nil :background 'gray)
 
 (defun stm-create-initial-frame ()
   "Place initial frame on screen and visit *scratch* buffer.

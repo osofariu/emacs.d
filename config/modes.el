@@ -1,9 +1,9 @@
 ;; Global
 (global-visual-line-mode 1)
 (column-number-mode)
-
-(show-paren-mode 1)
-(setq show-paren-style 'mixed)
+;(lispy-parens)
+;(show-paren-mode 1)
+;(setq show-paren-style 'mixed)
 
 ;; text-mode
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
@@ -39,7 +39,6 @@
 
 ;; geiser
 (setq geiser-active-implementations '(racket))
-(lispy-parens)
 
 ;; flyspell
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
