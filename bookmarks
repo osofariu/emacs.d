@@ -8,8 +8,8 @@
  (rear-context-string . "330572B2\n:END:\n\n")
  (position . 3033))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/notes/notes.org")
- (front-context-string . "** TODO another ")
- (rear-context-string . "ting][testing]]\n")
- (position . 558))
+ (filename . "~/Dropbox/notes/gtd.org")
+ (front-context-string . "** TODO foo\n \n [")
+ (rear-context-string . "harpen knives]]\n")
+ (position . 659))
 )
