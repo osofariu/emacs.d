@@ -1,7 +1,9 @@
 ;; Global
 (global-visual-line-mode 1)
-(show-paren-mode 1)
 (column-number-mode)
+
+(show-paren-mode 1)
+(setq show-paren-style 'mixed)
 
 ;; text-mode
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
@@ -55,3 +57,15 @@
 (evil-mode)
 (global-evil-leader-mode)
 (require 'evil-org)
+
+;; powerline
+(require 'powerline)
+(require 'powerline-evil)
+
+;(powerline-default-theme)
+;(powerline-center-theme)
+(powerline-center-evil-theme)
+;(powerline-nano-theme)
+;(powerline-vim-theme)
+
+

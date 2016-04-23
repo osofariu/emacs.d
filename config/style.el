@@ -4,10 +4,18 @@
  
 ;; initial window size
 (add-to-list 'default-frame-alist '(width  . 120))
-(add-to-list 'default-frame-alist '(height . 80))
+(add-to-list 'default-frame-alist '(height . 65))
 (add-to-list 'default-frame-alist '(left . 790))
 (add-to-list 'default-frame-alist '(top . 0))
 
+(load-theme 'clarity  t t)
+(enable-theme 'clarity)
+
+;(load-theme 'emacs-21  t t)
+;(enable-theme 'emacs-21)
+
+;(load-theme 'cobalt  t t)
+;(enable-theme 'cobalt)
 
 (when (featurep 'ns)
   (defun ns-raise-emacs ()

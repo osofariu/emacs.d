@@ -1,5 +1,5 @@
 (add-to-list 'default-frame-alist '(font . "Monaco-12"))
-(set-default-font "Monaco-12")
+;;(set-default-font "Monaco-12")
 
 (cond ((equal (system-name) "Cato.local") ;; HOME
        (setq is-home-machine 't)
@@ -26,9 +26,11 @@
 ;;; Add locations to load-path
 (add-to-list 'load-path "/usr/share/emacs/site-lisp")
  
+;; color-theme
+;(require 'color-theme)
+         
 (load "~/.emacs.d/functions.el")
 (load "~/.emacs.d/abbrevs.el")
 (load-directory "~/.emacs.d/config")
-
 
 
