@@ -3,9 +3,9 @@
 (setq inhibit-startup-echo-area-message t)
  
 ;; initial window size
-(add-to-list 'default-frame-alist '(width  . 121))
-(add-to-list 'default-frame-alist '(height . 65))
-(add-to-list 'default-frame-alist '(left . 810))
+(add-to-list 'default-frame-alist '(width  . 120))
+(add-to-list 'default-frame-alist '(height . 80))
+(add-to-list 'default-frame-alist '(left . 790))
 (add-to-list 'default-frame-alist '(top . 0))
 
 
@@ -25,8 +25,7 @@
   (when (display-graphic-p)
     (ns-raise-emacs)))
 
-;;;  *********************************
-;;; remember location in files
+;; remember location in files
 (setq save-place-file "~/.emacs.d/saveplace") 
 (setq-default save-place t)                   
 (require 'saveplace)                          
@@ -34,4 +33,3 @@
 (setq menu-bar-mode nil)
 (setq tool-bar-mode nil)
 (setq tooltip-mode nil)
-

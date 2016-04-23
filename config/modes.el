@@ -1,9 +1,9 @@
-;;; Global
+;; Global
 (global-visual-line-mode 1)
 (show-paren-mode 1)
 (column-number-mode)
 
-;;; text-mode
+;; text-mode
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook
   '(lambda() (set-fill-column 90)))
@@ -31,7 +31,7 @@
 ;; setup files ending in “.gpg” to open in org-mode
 (add-to-list 'auto-mode-alist '("\\.gpg\\'" . org-mode))
 
-; scheme and gradle modes for files:
+;; scheme and gradle modes for files:
 (add-to-list 'auto-mode-alist '("\\.gradle" . groovy-mode))
 (add-to-list 'auto-mode-alist '("\\.rkt" . scheme-mode))
 
