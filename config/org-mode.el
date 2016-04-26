@@ -7,6 +7,10 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline (concat org-directory "/gtd.org") "Tasks")
          "* TODO %?\n %i\n %a")
+        ("n" "Notes" entry (file+datetree (concat org-directory "/notes.org")) 
+         "* %^{Description} %^g 
+         %? 
+         Added: %U") 
         ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org")
          "* %?\nEntered on %U\n %i\n %a"))))
       
@@ -18,29 +22,29 @@
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
 
-(setq org-refile-targets '((nil :maxlevel . 4)
-                                (org-agenda-files :maxlevel . 4)))
+(setq org-refile-targets '((nil :maxlevel . 9)
+                           (org-agenda-files :maxlevel . 4)))
+
 (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
 (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
-
+(setq org-completion-use-ido t)                       ; try this
 ;; mobileorg settings
 (cond (is-home-machine
-       (setq org-mobile-inbox-for-pull "~/Dropbox/notes/inbox.org")
+       (setq org-mobile-inbox-for-pull (concat org-directory "/inbox.org"))
        (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
        (setq org-mobile-files '("~/Dropbox/notes" "~/Dropbox/notes/z-proj"))
        (setq org-return-follows-link 'RET)
        (setq org-log-repeat 'nil)
        (setq org-agenda-files
-             (append
-              (file-expand-wildcards "~/Dropbox/notes/x-*.org")
-              (file-expand-wildcards "~/Dropbox/notes/daily-journal.org")
-              (file-expand-wildcards "~/Dropbox/notes/gtd.org")))
+              (file-expand-wildcards (concat org-directory "/*.org")))
+       (setq org-refile-files org-agenda-files)
        (setq org-agenda-file-regexp "\\`[^.].*\\.org\\|.todo\\'")
        (setq org-agenda-skip-unavailable-files t)
        (setq org-agenda-skip-scheduled-if-done t)
        )
+      (else
+       (setq org-refile-files (file-expand-windcards (concat org-directory "/*.org"))))
       )
-
 ;; org-present
 (autoload 'org-present "org-present" nil t)
 

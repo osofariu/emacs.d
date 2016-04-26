@@ -8,14 +8,11 @@
 (add-to-list 'default-frame-alist '(left . 790))
 (add-to-list 'default-frame-alist '(top . 0))
 
-(load-theme 'clarity  t t)
-(enable-theme 'clarity)
-
-;(load-theme 'emacs-21  t t)
-;(enable-theme 'emacs-21)
-
-;(load-theme 'cobalt  t t)
-;(enable-theme 'cobalt)
+; favorite themes:  '('clarity 'pierson 'cobalt 'renegade 'resolve 'robin-hood 'julie 'subdued 'railcast))
+(setq current-theme 'clarity)
+            
+(load-theme current-theme  t t)
+(enable-theme current-theme)
 
 (when (featurep 'ns)
   (defun ns-raise-emacs ()

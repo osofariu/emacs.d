@@ -51,7 +51,7 @@
 
 ;; evil mode
 (setq evil-emacs-state-cursor '(box "green")
-      evil-normal-state-cursor '(box "purple"))
+      evil-normal-state-cursor '(box "yellow"))
 
 (evil-mode)
 (global-evil-leader-mode)

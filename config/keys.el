@@ -36,6 +36,7 @@
 (global-set-key "\C-cd" 'insert-current-date)
 (global-set-key "\C-cD" 'insert-current-date-time)
 (global-set-key "\C-cT" 'insert-current-time)
+(global-set-key (kbd "<f4>") 'delete-frame)
 
 ;; --- abbrevs.el:
 ;(global-set-key "\C-cJ" 'daily-entry)

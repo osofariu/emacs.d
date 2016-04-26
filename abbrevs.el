@@ -14,13 +14,13 @@
   
   "** "  (insert-current-date-time)
 "- Today’s MIT’s:\n"
-"  - \n"
+"  - [ ] \n"
 "\n"
 "- Today's plans (would like to do):\n"
-"  - \n"
+"  - [ ] \n"
 "\n"
 "- Retrospective:\n"
-"  - \n")
+"  - [ ] \n")
 
 
 (defun insert-daily-entry ()

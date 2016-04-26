@@ -3,13 +3,13 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-refile-last-stored"
- (filename . "~/Dropbox/notes/x-use.org")
- (front-context-string . "** Friends\n*** W")
- (rear-context-string . "e till November\n")
- (position . 20262))
+ (filename . "~/Dropbox/notes/x-meta.org")
+ (front-context-string . "** medical check")
+ (rear-context-string . " calories (15%)\n")
+ (position . 45154))
 ("org-capture-last-stored"
  (filename . "~/Dropbox/notes/gtd.org")
- (front-context-string . "** TODO do somet")
- (rear-context-string . "767820D62\n:END:\n")
- (position . 891))
+ (front-context-string . "** TODO clean up")
+ (rear-context-string . "** TODO do this\n")
+ (position . 1020))
 )

@@ -120,3 +120,22 @@ emacsclient -c -n -e '(stm-create-initial-frame)'"
       (set-frame-size (selected-frame) cols rows)
       (switch-to-buffer (get-buffer-create "*scratch*") t)
       (lisp-interaction-mode))))
+
+(require 'cl)
+
+(defvar server-buffers nil)
+
+(defun show-server-buffers ()
+  (interactive)
+  (setq server-buffers nil)
+  (let ((original-buffer (current-buffer)))
+    (loop for buf in (buffer-list)
+      do
+      (progn
+        (switch-to-buffer buf)
+        (if (and
+         server-buffer-clients
+         (buffer-live-p buf))
+        (add-to-list 'server-buffers buf))))
+    (switch-to-buffer original-buffer)
+    (message "server-buffers: %s" server-buffers)))
