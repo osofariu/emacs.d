@@ -1,7 +1,7 @@
 (add-to-list 'default-frame-alist '(font . "Monaco-12"))
 
 (cond ((equal (system-name) "Cato.local") ;; HOME
-       (setq is-home-machine 't)
+       (setq is-home-machine t)
        (setq org-directory "~/Dropbox/notes")
        (setq org-archive-dir "~/Dropbox/notes/archive"))
       
