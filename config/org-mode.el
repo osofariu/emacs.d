@@ -1,8 +1,23 @@
+;; make outline pretty by indenting it
 (setq org-startup-indented 't)
+
 (define-key global-map "\C-cl" 'org-store-link)
+;; can insert link with <C-C C-L>
+
 (define-key global-map "\C-ca" 'org-agenda)
+
+;; what to log when task done
 (setq org-log-done t)
+(setq org-log-repeat 'nil)
+
+;; follow links wtith RETURN
+(setq org-return-follows-link 'RET)
+
+;; location and format for archive file
 (setq org-archive-location (concat org-archive-dir "/%s_archive::"))
+
+;; suppress extra blank lines in lists
+(setq org-blank-before-new-entry nil)
 
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline (concat org-directory "/gtd.org") "Tasks")
@@ -33,10 +48,10 @@
        (setq org-mobile-inbox-for-pull (concat org-directory "/inbox.org"))
        (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
        (setq org-mobile-files '("~/Dropbox/notes" "~/Dropbox/notes/z-proj"))
-       (setq org-return-follows-link 'RET)
-       (setq org-log-repeat 'nil)
        (setq org-agenda-files
-              (file-expand-wildcards (concat org-directory "/*.org")))
+             (append
+              (file-expand-wildcards (concat org-directory "/*.org"))
+              (file-expand-wildcards (concat org-directory "/z-proj/*.org"))))
        (setq org-refile-files org-agenda-files)
        (setq org-agenda-file-regexp "\\`[^.].*\\.org\\|.todo\\'")
        (setq org-agenda-skip-unavailable-files t)

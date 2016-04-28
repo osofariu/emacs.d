@@ -9,8 +9,15 @@
 
 (fset 'save-encrypt
    [?\C-x ?\C-s tab tab tab ?m tab tab tab return])
- 
-(global-set-key (kbd "C-c s") 'save-encrypt)
+
+; TODO: save evil state, blah, blah, then switch back to saved state.
+(defun save-encrypt-file ()
+  "save current encrypted buffer"
+  (interactive)
+  (evil-emacs-state)
+  (save-encrypt))
+
+(global-set-key (kbd "C-c s") 'save-encrypt-file)
 
 ;(add-hook 'org-mode-hook
 ;         (lambda () (if (file-name-extension (buffer-file-name))
