@@ -8,7 +8,7 @@
 ;; text-mode
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook
-  '(lambda() (set-fill-column 90)))
+  '(lambda() (set-fill-column 110)))
 
 ;; smooth-scrolling
 (require 'smooth-scroll)

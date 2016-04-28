@@ -32,7 +32,7 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link)
-            (set-fill-column 90)))
+            (set-fill-column 110)))
 
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
@@ -57,8 +57,8 @@
        (setq org-agenda-skip-unavailable-files t)
        (setq org-agenda-skip-scheduled-if-done t)
        )
-      (else
-       (setq org-refile-files (file-expand-windcards (concat org-directory "/*.org"))))
+      (t
+       (setq org-refile-files (file-expand-wildcards (concat org-directory "/*.org"))))
       )
 ;; org-present
 (autoload 'org-present "org-present" nil t)
