@@ -16,8 +16,8 @@
 ;; location and format for archive file
 (setq org-archive-location (concat org-archive-dir "/%s_archive::"))
 
-;; suppress extra blank lines in lists
-(setq org-blank-before-new-entry nil)
+;; suppress extra blank lines in plain lists
+(setq org-list-empty-line-terminates-plain-lists nil)
 
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline (concat org-directory "/gtd.org") "Tasks")
@@ -27,15 +27,10 @@
          %? 
          Added: %U") 
         ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org")
-         "* %?\nEntered on %U\n %i\n %a"))))
-      
-(add-hook 'org-mode-hook
-          (lambda ()
-            (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link)
-            (set-fill-column 110)))
+                                            "* %?\nEntered on %U\n %i\n %a"))))
 
+;; org-capture default notes file
 (setq org-default-notes-file (concat org-directory "/notes.org"))
-(define-key global-map "\C-cc" 'org-capture)
 
 (setq org-refile-targets '((nil :maxlevel . 9)
                            (org-agenda-files :maxlevel . 4)))
@@ -43,7 +38,8 @@
 (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
 (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
 (setq org-completion-use-ido t)                       ; try this
-;; mobileorg settings
+
+;; mobileorg settings for home
 (cond (is-home-machine
        (setq org-mobile-inbox-for-pull (concat org-directory "/inbox.org"))
        (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
@@ -57,9 +53,16 @@
        (setq org-agenda-skip-unavailable-files t)
        (setq org-agenda-skip-scheduled-if-done t)
        )
-      (t
-       (setq org-refile-files (file-expand-wildcards (concat org-directory "/*.org"))))
+      (t (setq org-refile-files (file-expand-wildcards (concat org-directory "/*.org"))))
       )
+
+
+(add-hook 'org-mode-hook
+          (lambda ()
+           (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link)
+           (define-key global-map "\C-cc" 'org-capture)
+            (set-fill-column 110)))
+
 ;; org-present
 (autoload 'org-present "org-present" nil t)
 
@@ -77,3 +80,7 @@
                  (org-remove-inline-images)
                  (org-present-show-cursor)
                  (org-present-read-write)))))
+
+
+
+
