@@ -56,7 +56,7 @@
 
 (evil-mode)
 (global-evil-leader-mode)
-(require 'evil-org)
+;(require 'evil-org)
 
 ;; powerline
 (require 'powerline)
