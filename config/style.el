@@ -35,8 +35,6 @@
 (setq-default save-place t)                   
 (require 'saveplace)                          
 
-(define-key global-map (kbd "C-c C-=") 'text-scale-increase)
-(define-key global-map (kbd "C-c C-\-") 'text-scale-decrease)
 
 (setq menu-bar-mode nil)
 (setq tool-bar-mode nil)

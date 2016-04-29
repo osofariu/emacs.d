@@ -1,5 +1,3 @@
-;; --- .emacs:
-
 ;; Prevent accidentally killing emacs.
 (global-set-key [(control x) (control c)]
 		'(lambda ()
@@ -19,10 +17,9 @@
 
 (global-set-key (kbd "C-c s") 'save-encrypt-file)
 
-;(add-hook 'org-mode-hook
-;         (lambda () (if (file-name-extension (buffer-file-name))
-;                       (local-set-key (kbd "C-x s") 'save-encrypt))))
-
+;; quickly increase/decrease font size for external display
+(define-key global-map (kbd "C-c C-=") 'text-scale-increase)
+(define-key global-map (kbd "C-c C-\-") 'text-scale-decrease)
 
 (fset 'insert-after-node
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([C-return M-down] 0 "%d")) arg)))
