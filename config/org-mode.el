@@ -61,7 +61,7 @@
           (lambda ()
            (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link)
            (define-key global-map "\C-cc" 'org-capture)
-            (set-fill-column 110)))
+            (set-fill-column 90)))
 
 ;; org-present
 (autoload 'org-present "org-present" nil t)

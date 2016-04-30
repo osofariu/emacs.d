@@ -4,3 +4,4 @@ ido.last
 .org-id-locations
 url/*
 bookmarks
+*.elc
