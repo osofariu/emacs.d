@@ -8,7 +8,7 @@
 (add-to-list 'default-frame-alist '(left . 790))
 (add-to-list 'default-frame-alist '(top . 0))
 
-; favorite themes:  '('clarity 'pierson 'cobalt 'renegade 'resolve 'robin-hood 'julie 'subdued 'railcast))
+;; favorite themes:  '('clarity 'pierson 'cobalt 'renegade 'resolve 'robin-hood 'julie 'subdued 'railcast))
 (setq current-theme 'clarity)
             
 (load-theme current-theme  t t)
@@ -35,6 +35,15 @@
 (setq-default save-place t)                   
 (require 'saveplace)                          
 
+
 (setq menu-bar-mode nil)
 (setq tool-bar-mode nil)
 (setq tooltip-mode nil)
+
+ (defun my-terminal-visible-bell ()
+   "A friendlier visual bell effect."
+   (invert-face 'mode-line)
+   (run-with-timer 0.1 nil 'invert-face 'mode-line))
+ 
+ (setq visible-bell       nil
+       ring-bell-function #'my-terminal-visible-bell)

@@ -5,7 +5,7 @@
        (setq org-directory "~/Dropbox/notes")
        (setq org-archive-dir "~/Dropbox/notes/archive"))
       
-      ((equal (substring (system-name) 0 6) "Oliver") ;; WORK
+      ((equal (substring (downcase (system-name)) 0 6) "oliver") ;; WORK
        (setq is-home-machine nil)
        (setq org-directory "~/Dropbox/notes-work")
        (setq org-archive-dir "~/Dropbox/notes-work/archive")))
