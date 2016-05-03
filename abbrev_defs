@@ -43,6 +43,8 @@
 
 (define-abbrev-table 'evil-command-window-mode-abbrev-table '())
 
+(define-abbrev-table 'evil-list-view-mode-abbrev-table '())
+
 (define-abbrev-table 'fundamental-mode-abbrev-table '())
 
 (define-abbrev-table 'gfm-mode-abbrev-table '())

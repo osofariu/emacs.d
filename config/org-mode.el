@@ -17,17 +17,33 @@
 (setq org-archive-location (concat org-archive-dir "/%s_archive::"))
 
 ;; suppress extra blank lines in plain lists
-(setq org-list-empty-line-terminates-plain-lists nil)
-
+(setq org-list-empty-line-terminates-plain-lists t)
+(defun now ()
+  (format-time-string  "%H:%M:%S" (current-time)))
+  
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline (concat org-directory "/gtd.org") "Tasks")
          "* TODO %?\n %i\n %a")
+        ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
+         "\n
+* <%(now)> %i
+- Today’s MIT’s:
+  - [ ] %?
+
+- Today's plans (would like to do):
+  - [ ] 
+
+- Retrospective:
+  -  
+
+")
         ("n" "Notes" entry (file+datetree (concat org-directory "/notes.org")) 
          "* %^{Description} %^g 
          %? 
          Added: %U") 
-        ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org")
-                                            "* %?\nEntered on %U\n %i\n %a"))))
+        ))
+
+;;"* %?\nEntered on %U\n %i\n %a"
 
 ;; org-capture default notes file
 (setq org-default-notes-file (concat org-directory "/notes.org"))

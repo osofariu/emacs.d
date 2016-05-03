@@ -10,7 +10,7 @@ See help of `format-time-string' for possible replacements")
 See help of `format-time-string' for possible replacements")
 
 
-(defvar current-time-format "%a %H:%M:%S"
+(defvar current-time-format "%H:%M:%S"
   "Format of date to insert with `insert-current-time' func.
 Note the weekly scope of the command's precision.")
 

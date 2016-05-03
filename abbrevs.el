@@ -12,7 +12,7 @@
 (define-skeleton org-skeleton-daily-entry
   "Insert a daily entry" nil
   
-  "** "  (insert-current-date-time)
+  " "  (insert-current-time)
 "- Today’s MIT’s:\n"
 "  - [ ] \n"
 "\n"
@@ -26,10 +26,7 @@
 (defun insert-daily-entry ()
   "insert daily entry"
   (interactive)
-  (org-skeleton-daily-entry)
-  (search-backward "MIT")
-  (next-line)
-  )
+  (org-skeleton-daily-entry))
 
 (defun reload-current-buffer ()
   "reload current buffer"
