@@ -43,7 +43,14 @@
                 (font . "-apple-Monaco-medium-normal-normal-*-13-*-*-*-m-0-iso10646-1")
                 ))
   (select-frame-by-name "remember")
-  (delete-other-windows)
   (org-capture))
 
 ;;; alfred-org-capture.el ends here
+(defun make-capture-frame ()
+     "Create a new frame and run org-capture."
+     (interactive)
+     (make-frame '((name . "capture")))
+     (select-frame-by-name "capture")
+     (delete-other-windows)
+     (noflet ((switch-to-buffer-other-window (buf) (switch-to-buffer buf)))
+       (org-capture)))

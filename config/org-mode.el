@@ -16,11 +16,13 @@
 ;; location and format for archive file
 (setq org-archive-location (concat org-archive-dir "/%s_archive::"))
 
+;; open org-caoture in new frame
+(add-hook 'org-capture-mode-hook 'delete-other-windows)
+
 ;; suppress extra blank lines in plain lists
 (setq org-list-empty-line-terminates-plain-lists t)
 (defun now ()
   (format-time-string  "%H:%M:%S" (current-time)))
-  
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline (concat org-directory "/gtd.org") "Tasks")
          "* TODO %?\n %i\n %a")

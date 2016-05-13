@@ -68,6 +68,8 @@
 ;(powerline-nano-theme)
 ;(powerline-vim-theme)
 
+(require 'noflet)
+
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (require 'ert-expectations)
