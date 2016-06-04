@@ -53,6 +53,8 @@ Uses `current-date-format' for the formatting the date/time."
        ((and (eq isdir nil) (string= (substring path -3) ".el"))
         (load (file-name-sans-extension fullpath)))))))
 
+
+
 ;(defun abbrev-expand-function ()
 ;  (if (looking-back "\"\"\\|''\\|()\\|\\[\\]\\|{}")
 ;      (insert-current-date-time)
