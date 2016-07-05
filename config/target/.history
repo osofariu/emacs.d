@@ -1,0 +1,5 @@
+help
+help test-only
+help test
+test-only
+exit

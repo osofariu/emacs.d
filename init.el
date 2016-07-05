@@ -26,6 +26,22 @@
          
 (setq ess-r-versions nil) ;; *BEFORE* ess-site is loaded (!)
 
+;; active Babel languages
+(org-babel-do-load-languages
+   'org-babel-load-languages
+   '((sh         . t)
+     (js         . t)
+     (emacs-lisp . t)
+     (perl       . t)
+     (scala      . t)
+     (clojure    . t)
+     (python     . t)
+     (ruby       . t)
+     (css        . t)))
+
+(require 'htmlize)
+;(require 'ob-scala)
+
 (load "~/.emacs.d/functions.el")
 (load "~/.emacs.d/abbrevs.el")
 (load-directory "~/.emacs.d/config")

@@ -1,5 +1,11 @@
+
+
 ;; make outline pretty by indenting it
 (setq org-startup-indented 't)
+
+;; fontify code blocks
+(setq org-src-fontify-natively t)
+(setq org-src-tab-acts-natively t)
 
 (define-key global-map "\C-cl" 'org-store-link)
 ;; can insert link with <C-C C-L>
@@ -16,9 +22,8 @@
 ;; location and format for archive file
 (setq org-archive-location (concat org-archive-dir "/%s_archive::"))
 
-;; open org-caoture in new frame
+;; open org-capture in new frame
 (add-hook 'org-capture-mode-hook 'delete-other-windows)
-
 ;; suppress extra blank lines in plain lists
 (setq org-list-empty-line-terminates-plain-lists t)
 (defun now ()
@@ -29,20 +34,15 @@
         ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
          "\n
 * <%(now)> %i
-- Today’s MIT’s:
-  - [ ] %?
+- 
 
-- Today's plans (would like to do):
-  - [ ] 
-
-- Retrospective:
-  -  
+*** TODO %? 
 
 ")
-        ("n" "Notes" entry (file+datetree (concat org-directory "/notes.org")) 
-         "* %^{Description} %^g 
-         %? 
-         Added: %U") 
+        ("n" "Notes" entry (file+datetree (concat org-directory "/notes.org"))
+         "* %^{Description} %^g
+         %?
+         Added: %U")
         ))
 
 ;;"* %?\nEntered on %U\n %i\n %a"
@@ -56,6 +56,10 @@
 (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
 (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
 (setq org-completion-use-ido t)                       ; try this
+
+;; org-mode export
+(eval-after-load "org"
+  '(require 'ox-md nil t))
 
 ;; mobileorg settings for home
 (cond (is-home-machine
@@ -102,3 +106,15 @@
 
 
 
+
+(font-lock-add-keywords 'org-mode
+                    '(("\\(src_\\)\\([^[{]+\\)\\(\\[:.*\\]\\){\\([^}]*\\)}"
+                       (1 '(:foreground "black" :weight 'normal :height 10)) ; src_ part
+                       (2 '(:foreground "cyan" :weight 'bold :height 75 :underline "red")) ; "lang" part.
+                       (3 '(:foreground "#555555" :height 70)) ; [:header arguments] part.
+                       (4 'org-code) ; "code..." part.
+                       )))
+; (setq org-html-htmlize-output-type 'inline-css) ;; default
+;(setq org-html-htmlize-output-type 'css)
+;; (setq org-html-htmlize-font-prefix "") ;; default
+;;(setq org-html-htmlize-font-prefix "org-")

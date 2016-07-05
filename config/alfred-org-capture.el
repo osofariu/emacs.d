@@ -1,8 +1,11 @@
 (fset 'jump-to-last-entry
-   [?\C-x ?\] ?\C-s ?\C-r ?M ?I ?T return down])
+   [?\C-x ?\] ?\C-s ?\C-r ?T ?O ?D ?O return ?A])
 
 (fset 'jump-to-last
    [S-tab S-tab S-tab])
+
+(fset 'select-journal
+   "j")
 
 ;;; Code:
 (defun make-orgcapture-frame ()
