@@ -64,3 +64,6 @@
 
 ;; magit
 (global-set-key [(control c)(control g)] 'magit-status)
+
+;; org-mode follow link
+

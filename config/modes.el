@@ -81,12 +81,18 @@
             (define-key emacs-lisp-mode-map
               "\C-x\C-e" 'pp-eval-last-sexp)
             ;; Recompile if .elc exists.
-            (add-hook (make-local-variable 'after-save-hook)
-                      (lambda ()
-                        (if (not (string-prefix-p "/Users/ovi/.emacs.d" (file-name-directory buffer-file-name)))
-                            (byte-force-recompile default-directory)
-                          nil)))
+     ;;       (add-hook (make-local-variable 'after-save-hook)
+     ;;                 (lambda ()
+     ;;                   (if (not (string-prefix-p "/Users/ovi/.emacs.d" (file-name-directory buffer-file-name)))
+     ;;                       (byte-force-recompile default-directory)
+     ;;                     nil)))
             (define-key emacs-lisp-mode-map
               "\r" 'reindent-then-newline-and-indent)))
 (add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
 (add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode) ;; Requires Ispell
+
+(use-package ensime
+             :pin melpa-stable)
+
+;(setq debug-on-error t)
+(require 'ensime)

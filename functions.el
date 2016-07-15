@@ -97,12 +97,12 @@ Uses `current-date-format' for the formatting the date/time."
      			 (face-foreground 'default)))
   (set-face-attribute 'show-paren-match-face nil :weight 'ultra-bold)) 
 
-(require 'paren)
-(setq show-paren-style 'mixed)
-(set-face-background 'show-paren-match (face-background 'default))
-(set-face-foreground 'show-paren-match "#def")
-(set-face-attribute 'show-paren-match nil :weight 'ultra-bold)
-(set-face-attribute 'show-paren-match nil :foreground "dark gray")
+;(require 'paren)
+;(setq show-paren-style 'mixed)
+;(set-face-background 'show-paren-match (face-background 'default))
+;(set-face-foreground 'show-paren-match "#def")
+;(set-face-attribute 'show-paren-match nil :weight 'ultra-bold)
+;(set-face-attribute 'show-paren-match nil :foreground "dark gray")
 ;(set-face-attribute 'show-paren-match nil :background 'gray)
 
 (defun stm-create-initial-frame ()
