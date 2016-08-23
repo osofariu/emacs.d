@@ -65,11 +65,11 @@
 (cond (is-home-machine
        (setq org-mobile-inbox-for-pull (concat org-directory "/inbox.org"))
        (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
-       (setq org-mobile-files '("~/Dropbox/notes" "~/Dropbox/notes/z-proj"))
+       (setq org-mobile-files '("~/Dropbox/notes" "~/Dropbox/notes/projects"))
        (setq org-agenda-files
              (append
               (file-expand-wildcards (concat org-directory "/*.org"))
-              (file-expand-wildcards (concat org-directory "/z-proj/*.org"))))
+              (file-expand-wildcards (concat org-directory "/projects/*.org"))))
        (setq org-refile-files org-agenda-files)
        (setq org-agenda-file-regexp "\\`[^.].*\\.org\\|.todo\\'")
        (setq org-agenda-skip-unavailable-files t)
