@@ -21,6 +21,10 @@
 ;; ido mode for managing buffers
 (require 'ido)
 (ido-mode t)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(setq ido-create-new-buffer 'always) ;; Control-b creates buffers automatically
+(setq ido-file-extensions-order '(".org" ".txt"  ".emacs" ".xml" ".el" ".ini" ".h" ".c"))
 
 ;; for git to auto-sync files
 (setq global-auto-revert-mode t)
