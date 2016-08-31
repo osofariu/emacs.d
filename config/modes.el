@@ -22,6 +22,9 @@
 (require 'ido)
 (ido-mode t)
 
+;; for git to auto-sync files
+(setq global-auto-revert-mode t)
+
 ;; markdown mode
 (load "markdown-mode.el")
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))

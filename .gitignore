@@ -5,3 +5,4 @@ ido.last
 url/*
 bookmarks
 *.elc
+.#ido.last
