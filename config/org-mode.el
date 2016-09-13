@@ -16,7 +16,7 @@
 (setq org-log-done t)
 (setq org-log-repeat 'nil)
 
-;; follow links wtith RETURN
+;; follow links with RETURN
 (setq org-return-follows-link 'RET)
 
 ;; location and format for archive file
@@ -34,9 +34,7 @@
         ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
          "\n
 * <%(now)> %i
-- 
-
-*** TODO %? 
+*** %? 
 
 ")
         ("n" "Notes" entry (file+datetree (concat org-directory "/notes.org"))
@@ -85,7 +83,7 @@
            (define-key global-map "\C-cc" 'org-capture)
             (set-fill-column 90)))
 
-;; org-present
+
 (autoload 'org-present "org-present" nil t)
 
 (eval-after-load "org-present"

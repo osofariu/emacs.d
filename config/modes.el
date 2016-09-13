@@ -33,6 +33,9 @@
 ;; setup files ending in “.gpg” to open in org-mode
 (add-to-list 'auto-mode-alist '("\\.gpg\\'" . org-mode))
 
+;; javascript
+ (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
 ;; scheme and gradle modes for files:
 (add-to-list 'auto-mode-alist '("\\.gradle" . groovy-mode))
 (add-to-list 'auto-mode-alist '("\\.rkt" . scheme-mode))
