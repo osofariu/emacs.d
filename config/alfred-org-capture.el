@@ -1,8 +1,5 @@
 (fset 'jump-to-last-entry
-   [?\C-x ?\] ?\C-s ?\C-r ?T ?O ?D ?O return ?A])
-
-(fset 'jump-to-last
-   [S-tab S-tab S-tab])
+   [escape ?G ?? ?* return ?a ? ])
 
 (fset 'select-journal
    "j")

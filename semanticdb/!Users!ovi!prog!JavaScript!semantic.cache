@@ -1,0 +1,16 @@
+;; Object JavaScript/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "JavaScript/"
+  :tables
+  (list
+    (semanticdb-table "notes.js"
+      :major-mode 'js-mode
+      :tags nil
+      :file "notes.js"
+      :pointmax 55
+      :fsize 54
+      :lastmodtime '(22484 28606 0 0)
+      :unmatched-syntax '(($EOI 55 . 55) (ASSIGN_SYMBOL 46 . 47))))
+  :file "!Users!ovi!prog!JavaScript!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

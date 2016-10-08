@@ -1,5 +1,3 @@
-
-
 ;; make outline pretty by indenting it
 (setq org-startup-indented 't)
 
@@ -26,15 +24,20 @@
 (add-hook 'org-capture-mode-hook 'delete-other-windows)
 ;; suppress extra blank lines in plain lists
 (setq org-list-empty-line-terminates-plain-lists t)
+
 (defun now ()
   (format-time-string  "%H:%M:%S" (current-time)))
+
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline (concat org-directory "/gtd.org") "Tasks")
+      '(("t" "Todo" entry (file+headline (concat org-directory "/main.org") "Tasks")
          "* TODO %?\n %i\n %a")
         ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
          "\n
 * <%(now)> %i
-*** %? 
+** MIT's
+- [ ]
+
+** %?
 
 ")
         ("n" "Notes" entry (file+datetree (concat org-directory "/notes.org"))
@@ -45,11 +48,21 @@
 
 ;;"* %?\nEntered on %U\n %i\n %a"
 
+(setq org-agenda-custom-commands
+      '(("w" todo "TODO"
+         ((org-agenda-sorting-strategy '(priority-down))
+          (org-agenda-prefix-format "  Mixed: ")))
+        ("U" tags-tree "+boss-urgent"
+         ((org-show-context-detail 'minimal)))
+        ("N" search ""
+         ((org-agenda-files '("~org/notes.org"))
+          (org-agenda-text-search-extra-files nil)))))
+
 ;; org-capture default notes file
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
 (setq org-refile-targets '((nil :maxlevel . 9)
-                           (org-agenda-files :maxlevel . 4)))
+                           (org-agenda-files :maxlevel . 3)))
 
 (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
 (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
@@ -58,6 +71,25 @@
 ;; org-mode export
 (eval-after-load "org"
   '(require 'ox-md nil t))
+
+;; mobile sync scheduling
+(defvar org-mobile-sync-timer nil)
+(defvar org-mobile-sync-idle-secs (* 60 10))
+(defun org-mobile-sync ()
+  (interactive)
+  (org-mobile-pull)
+  (org-mobile-push))
+(defun org-mobile-sync-enable ()
+  "enable mobile org idle sync"
+  (interactive)
+  (setq org-mobile-sync-timer
+        (run-with-idle-timer org-mobile-sync-idle-secs t
+                             'org-mobile-sync)));
+(defun org-mobile-sync-disable ()
+  "disable mobile org idle sync"
+  (interactive)
+  (cancel-timer org-mobile-sync-timer))
+(org-mobile-sync-enable)
 
 ;; mobileorg settings for home
 (cond (is-home-machine

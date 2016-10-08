@@ -1,0 +1,29 @@
+;; Object learnJs/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "learnJs/"
+  :tables
+  (list
+    (semanticdb-table "main.js"
+      :major-mode 'js-mode
+      :tags nil
+      :file "main.js"
+      :pointmax 430
+      :fsize 429
+      :lastmodtime '(22485 35376 0 0)
+      :unmatched-syntax '((PAREN_BLOCK 18 . 428) (DOT 12 . 13) (PAREN_BLOCK 2 . 12)))
+    (semanticdb-table "index.html"
+      :major-mode 'html-mode
+      :tags 
+        '( ("My first application!" section (:members 
+              ( ("My first application!" section nil nil [107 209]))              ) nil [94 209])
+            ("" section nil nil [209 283])
+            ("" section nil nil [283 386])
+            ("" section nil nil [386 478]))          
+      :file "index.html"
+      :pointmax 478
+      :fsize 477
+      :lastmodtime '(22485 33789 0 0)
+      :unmatched-syntax nil))
+  :file "!Users!ovi!prog!JavaScript!learnJs!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -19,7 +19,7 @@
 
 (define-abbrev-table 'edit-abbrevs-mode-abbrev-table '())
 
-(define-abbrev-table 'emacs-lisp-byte-code-mode-abbrev-table '())
+(define-abbrev-table 'elisp-byte-code-mode-abbrev-table '())
 
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
 
@@ -73,6 +73,8 @@
 (define-abbrev-table 'grep-mode-abbrev-table '())
 
 (define-abbrev-table 'gud-mode-abbrev-table '())
+
+(define-abbrev-table 'help-mode-abbrev-table '())
 
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
