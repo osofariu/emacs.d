@@ -5,17 +5,18 @@
 		   (if (y-or-n-p-with-timeout "Exit Emacs ? " 4 nil)
 		       (save-buffers-kill-emacs))))
 
-(fset 'save-encrypt
-   [?\C-x ?\C-s tab tab tab ?m tab tab tab return])
+(fset 'encrypt-current-buffer
+   [?\C-x ?\C-s ?/ ?s ?o ?f ?a ?r ?i ?u return ?\M-x ?e ?p ?a ?- ?m ?a ?r ?k ?- ?k ?e ?y return ?? ?O ?K return return])
+
 
 ; TODO: save evil state, blah, blah, then switch back to saved state.
 (defun save-encrypt-file ()
   "save current encrypted buffer"
   (interactive)
   (evil-emacs-state)
-  (save-encrypt))
+  (execute-kbd-macro (symbol-function 'save-encrypt)))
 
-(global-set-key (kbd "C-c s") 'save-encrypt-file)
+(global-set-key (kbd "C-c s") 'encrypt-current-buffer)
 
 ;; quickly increase/decrease font size for external display
 (define-key global-map (kbd "C-c C-=") 'text-scale-increase)

@@ -1,6 +1,9 @@
 ;; make outline pretty by indenting it
 (setq org-startup-indented 't)
 
+;;
+(setq org-complete-tags-always-offer-all-agenda-tags t)
+
 ;; fontify code blocks
 (setq org-src-fontify-natively t)
 (setq org-src-tab-acts-natively t)
@@ -25,7 +28,11 @@
 ;; suppress extra blank lines in plain lists
 (setq org-list-empty-line-terminates-plain-lists t)
 
-(defun now ()
+(defun now-date ()
+  (interactive
+  (format-time-string  "%Y-%m-%d %" (current-time)))
+)
+(defun now-time ()
   (format-time-string  "%H:%M:%S" (current-time)))
 
 (setq org-capture-templates
@@ -33,10 +40,7 @@
          "* TODO %?\n %i\n %a")
         ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
          "\n
-* <%(now)> %i
-** MIT's
-- [ ]
-
+* <%(now-time)> %i
 ** %?
 
 ")
@@ -62,7 +66,7 @@
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
 (setq org-refile-targets '((nil :maxlevel . 9)
-                           (org-agenda-files :maxlevel . 3)))
+                           (org-agenda-files :maxlevel . 2)))
 
 (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
 (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
@@ -75,10 +79,12 @@
 ;; mobile sync scheduling
 (defvar org-mobile-sync-timer nil)
 (defvar org-mobile-sync-idle-secs (* 60 10))
+
 (defun org-mobile-sync ()
   (interactive)
   (org-mobile-pull)
   (org-mobile-push))
+
 (defun org-mobile-sync-enable ()
   "enable mobile org idle sync"
   (interactive)

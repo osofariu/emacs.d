@@ -15,8 +15,8 @@
 (smooth-scroll-mode 't)
 (setq mouse-wheel-progressive-speed 'f) ;; don't accelerate scrolling
 (setq smooth-scroll-mode 't)
-(setq smooth-scroll/hscroll-step-size 10)
-(setq smooth-scroll/vscroll-step-size 10)
+(setq smooth-scroll/hscroll-step-size 2)
+(setq smooth-scroll/vscroll-step-size 2)
 
 ;; ido mode for managing buffers
 (require 'ido)
@@ -34,8 +34,12 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 (require 'epa-file)
+(epa-file-enable)
+
 (setq epa-file-cache-passphrase-for-symmetric-encryption 't)
 (setq epa-file-encrypt-to: "ovi@sofariu.com")
+;(setq epa-file-encrypt-to: nil)
+;(setq epa-file-select-keys nil)
 
 ;; setup files ending in “.gpg” to open in org-mode
 (add-to-list 'auto-mode-alist '("\\.gpg\\'" . org-mode))

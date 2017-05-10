@@ -55,11 +55,6 @@ Uses `current-date-format' for the formatting the date/time."
 
 
 
-;(defun abbrev-expand-function ()
-;  (if (looking-back "\"\"\\|''\\|()\\|\\[\\]\\|{}")
-;      (insert-current-date-time)
-;    'foo))
-
 (defun lawlist-org-cycle-hide-drawers (state)
   "Re-hide all drawers after a visibility state change."
   (when (and (derived-mode-p 'org-mode)
@@ -96,14 +91,6 @@ Uses `current-date-format' for the formatting the date/time."
     (set-face-foreground 'show-paren-match-face 
      			 (face-foreground 'default)))
   (set-face-attribute 'show-paren-match-face nil :weight 'ultra-bold)) 
-
-;(require 'paren)
-;(setq show-paren-style 'mixed)
-;(set-face-background 'show-paren-match (face-background 'default))
-;(set-face-foreground 'show-paren-match "#def")
-;(set-face-attribute 'show-paren-match nil :weight 'ultra-bold)
-;(set-face-attribute 'show-paren-match nil :foreground "dark gray")
-;(set-face-attribute 'show-paren-match nil :background 'gray)
 
 (defun stm-create-initial-frame ()
   "Place initial frame on screen and visit *scratch* buffer.
