@@ -55,6 +55,7 @@
 (setq geiser-active-implementations '(racket))
 
 ;; flyspell
+(setq ispell-program-name "/usr/local/bin/ispell")
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
 (setq ispell-silently-savep t)
 

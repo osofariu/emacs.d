@@ -7,7 +7,7 @@
  '(large-file-warning-threshold nil)
  '(package-selected-packages
    (quote
-    (use-package smooth-scroll sml-mode racket-mode quack powerline-evil pabbrev noflet nlinum markdown-mode magit js2-mode htmlize geiser evil-org ert-expectations ensime el-mock diff-hl color-theme-modern))))
+    (use-package smooth-scroll sml-mode racket-mode quack powerline-evil pabbrev noflet nlinum markdown-mode magit js2-mode htmlize geiser ert-expectations ensime el-mock diff-hl color-theme-modern))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

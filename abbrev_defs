@@ -70,6 +70,8 @@
     ("wether" "whether" nil 5)
    ))
 
+(define-abbrev-table 'gnus-group-mode-abbrev-table '())
+
 (define-abbrev-table 'grep-mode-abbrev-table '())
 
 (define-abbrev-table 'gud-mode-abbrev-table '())
@@ -79,6 +81,8 @@
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
 (define-abbrev-table 'markdown-mode-abbrev-table '())
+
+(define-abbrev-table 'message-mode-abbrev-table '())
 
 (define-abbrev-table 'messages-buffer-mode-abbrev-table '())
 
