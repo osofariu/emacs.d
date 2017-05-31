@@ -23,7 +23,7 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
-(setq ido-create-new-buffer 'always) ;; Control-b creates buffers automatically
+(setq ido-create-new-buffer 'always) ;; Control-j creates buffers automatically
 (setq ido-file-extensions-order '(".org" ".txt"  ".emacs" ".xml" ".el" ".ini" ".h" ".c"))
 
 ;; for git to auto-sync files
@@ -68,6 +68,7 @@
 (setq evil-emacs-state-cursor '(box "green")
       evil-normal-state-cursor '(box "red"))
 
+(setq evil-want-C-u-scroll t)
 
 (evil-mode)
 (global-evil-leader-mode)
