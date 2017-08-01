@@ -1,6 +1,7 @@
 ;; Global
 (global-visual-line-mode 1)
 (column-number-mode)
+
 ;(lispy-parens)
 ;(show-paren-mode 1)
 ;(setq show-paren-style 'mixed)
@@ -9,14 +10,6 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook
   '(lambda() (set-fill-column 110)))
-
-;; smooth-scrolling
-(require 'smooth-scroll)
-(smooth-scroll-mode 't)
-(setq mouse-wheel-progressive-speed 'f) ;; don't accelerate scrolling
-(setq smooth-scroll-mode 't)
-(setq smooth-scroll/hscroll-step-size 2)
-(setq smooth-scroll/vscroll-step-size 2)
 
 ;; ido mode for managing buffers
 (require 'ido)
@@ -38,21 +31,21 @@
 
 (setq epa-file-cache-passphrase-for-symmetric-encryption 't)
 (setq epa-file-encrypt-to: "ovi@sofariu.com")
-;(setq epa-file-encrypt-to: nil)
-;(setq epa-file-select-keys nil)
+(setq epa-file-encrypt-to: nil)
+(setq epa-file-select-keys nil)
 
 ;; setup files ending in “.gpg” to open in org-mode
 (add-to-list 'auto-mode-alist '("\\.gpg\\'" . org-mode))
 
 ;; javascript
- (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; scheme and gradle modes for files:
 (add-to-list 'auto-mode-alist '("\\.gradle" . groovy-mode))
 (add-to-list 'auto-mode-alist '("\\.rkt" . scheme-mode))
 
 ;; geiser
-(setq geiser-active-implementations '(racket))
+;(setq geiser-active-implementations '(racket))
 
 ;; flyspell
 (setq ispell-program-name "/usr/local/bin/ispell")
@@ -64,7 +57,8 @@
 (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
   (add-hook hook (lambda () (flyspell-mode -1))))
 
-;; evil mode
+;; evilmode
+(setq evil-disable-insert-state-bindings 't) 
 (setq evil-emacs-state-cursor '(box "green")
       evil-normal-state-cursor '(box "red"))
 
@@ -72,8 +66,14 @@
 
 (evil-mode)
 (global-evil-leader-mode)
-;(require 'evil-org)
 
+;; re-map scroll keys:
+(define-key evil-normal-state-map (kbd "C-k") (lambda ()
+                    (interactive)
+                    (evil-scroll-up nil)))
+(define-key evil-normal-state-map (kbd "C-j") (lambda ()
+                        (interactive)
+                        (evil-scroll-down nil)))
 ;; powerline
 (require 'powerline)
 (require 'powerline-evil)
@@ -107,8 +107,8 @@
 (add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
 (add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode) ;; Requires Ispell
 
-(use-package ensime
-             :pin melpa-stable)
+;(use-package ensime
+;             :pin melpa-stable)
 
 ;(setq debug-on-error t)
-(require 'ensime)
+;(require 'ensime)
