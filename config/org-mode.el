@@ -26,6 +26,12 @@
 
 ;; open org-capture in new frame
 (add-hook 'org-capture-mode-hook 'delete-other-windows)
+
+
+;; more todo states
+(setq org-todo-keywords
+      '((sequence "TODO" "DOING" "DONE")))
+
 ;; suppress extra blank lines in plain lists
 (setq org-list-empty-line-terminates-plain-lists t)
 
@@ -114,8 +120,8 @@
        (setq org-agenda-skip-unavailable-files t)
        (setq org-agenda-skip-scheduled-if-done t)
        )
-      (t (setq org-refile-files (file-expand-wildcards (concat org-directory "/*.org"))))
-      )
+      (t (setq org-agenda-files (file-expand-wildcards (concat org-directory "/*.org")))
+         (setq org-refile-files (file-expand-wildcards (concat org-directory "/*.org")))))
 
 (add-hook 'org-mode-hook
           (lambda ()

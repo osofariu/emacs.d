@@ -9,7 +9,7 @@
 (add-to-list 'default-frame-alist '(top . 0))
 
 ;; favorite themes:  '('clarity 'pierson 'cobalt 'renegade 'resolve 'robin-hood 'julie 'subdued 'railcast))
-;(setq current-theme 'renegade)
+;(setq current-theme 'pierson)
 (setq current-theme 'leuven)
 (set-face-attribute 'org-agenda-date nil :height 90) ; 9 pt font.           
 
