@@ -15,19 +15,11 @@
 
 (define-abbrev-table 'diary-mode-abbrev-table '())
 
-(define-abbrev-table 'diff-mode-abbrev-table '())
-
 (define-abbrev-table 'edit-abbrevs-mode-abbrev-table '())
 
 (define-abbrev-table 'elisp-byte-code-mode-abbrev-table '())
 
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
-
-(define-abbrev-table 'ensime-connection-list-mode-abbrev-table '())
-
-(define-abbrev-table 'ensime-inf-mode-abbrev-table '())
-
-(define-abbrev-table 'ensime-inspector-mode-abbrev-table '())
 
 (define-abbrev-table 'epa-info-mode-abbrev-table '())
 
@@ -40,22 +32,6 @@
 (define-abbrev-table 'evil-list-view-mode-abbrev-table '())
 
 (define-abbrev-table 'fundamental-mode-abbrev-table '())
-
-(define-abbrev-table 'gdb-breakpoints-mode-abbrev-table '())
-
-(define-abbrev-table 'gdb-disassembly-mode-abbrev-table '())
-
-(define-abbrev-table 'gdb-frames-mode-abbrev-table '())
-
-(define-abbrev-table 'gdb-locals-mode-abbrev-table '())
-
-(define-abbrev-table 'gdb-memory-mode-abbrev-table '())
-
-(define-abbrev-table 'gdb-registers-mode-abbrev-table '())
-
-(define-abbrev-table 'gdb-script-mode-abbrev-table '())
-
-(define-abbrev-table 'gdb-threads-mode-abbrev-table '())
 
 (define-abbrev-table 'gfm-mode-abbrev-table '())
 
@@ -71,10 +47,6 @@
    ))
 
 (define-abbrev-table 'gnus-group-mode-abbrev-table '())
-
-(define-abbrev-table 'grep-mode-abbrev-table '())
-
-(define-abbrev-table 'gud-mode-abbrev-table '())
 
 (define-abbrev-table 'help-mode-abbrev-table '())
 
@@ -101,8 +73,6 @@
 (define-abbrev-table 'process-menu-mode-abbrev-table '())
 
 (define-abbrev-table 'prog-mode-abbrev-table '())
-
-(define-abbrev-table 'sbt-mode-abbrev-table '())
 
 (define-abbrev-table 'shell-mode-abbrev-table '())
 
