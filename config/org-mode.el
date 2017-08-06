@@ -26,6 +26,12 @@
 
 ;; open org-capture in new frame
 (add-hook 'org-capture-mode-hook 'delete-other-windows)
+
+
+;; more todo states
+(setq org-todo-keywords
+      '((sequence "TODO" "DOING" "DONE")))
+
 ;; suppress extra blank lines in plain lists
 (setq org-list-empty-line-terminates-plain-lists t)
 
@@ -77,27 +83,29 @@
 (eval-after-load "org"
   '(require 'ox-md nil t))
 
+(cond (is-home-machine
 ;; mobile sync scheduling
-(defvar org-mobile-sync-timer nil)
-(defvar org-mobile-sync-idle-secs (* 60 5))
+       (defvar org-mobile-sync-timer nil)
+       (defvar org-mobile-sync-idle-secs (* 60 5))
 
-(defun org-mobile-sync ()
-  (interactive)
-  (org-mobile-pull)
-  (org-mobile-push))
+       (defun org-mobile-sync ()
+         (interactive)
+         (org-mobile-pull)
+         (org-mobile-push))
 
-(defun org-mobile-sync-enable ()
-  "enable mobile org idle sync"
-  (interactive)
-  (setq org-mobile-sync-timer
-        (run-with-idle-timer org-mobile-sync-idle-secs t
-                             'org-mobile-sync)));
-(defun org-mobile-sync-disable ()
-  "disable mobile org idle sync"
-  (interactive)
-  (cancel-timer org-mobile-sync-timer))
+       (defun org-mobile-sync-enable ()
+         "enable mobile org idle sync"
+         (interactive)
+         (setq org-mobile-sync-timer
+               (run-with-idle-timer org-mobile-sync-idle-secs t
+                                    'org-mobile-sync)));
 
-;(org-mobile-sync-enable)
+       (defun org-mobile-sync-disable ()
+         "disable mobile org idle sync"
+         (interactive)
+         (cancel-timer org-mobile-sync-timer))))
+
+;;(org-mobile-sync-enable)
 
 
 ;; mobileorg settings for home
@@ -114,8 +122,8 @@
        (setq org-agenda-skip-unavailable-files t)
        (setq org-agenda-skip-scheduled-if-done t)
        )
-      (t (setq org-refile-files (file-expand-wildcards (concat org-directory "/*.org"))))
-      )
+      (t (setq org-agenda-files (file-expand-wildcards (concat org-directory "/*.org")))
+         (setq org-refile-files (file-expand-wildcards (concat org-directory "/*.org")))))
 
 (add-hook 'org-mode-hook
           (lambda ()

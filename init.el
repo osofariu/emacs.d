@@ -1,24 +1,21 @@
+(setq org-directory "~/Dropbox/notes")
+(setq org-archive-dir "~/Dropbox/notes/archive")
+(setq is-home-machine nil)
 
 ;; TODO commit the version on my work machine and push
 
 (cond ((equal (system-name) "Cato.local") ;; HOME
        (add-to-list 'default-frame-alist '(font . "Monaco-12"))
-       (setq is-home-machine t)
-       (setq org-directory "~/Dropbox/notes")
-       (setq org-archive-dir "~/Dropbox/notes/archive"))
+       (setq is-home-machine t))
       
       ((equal (substring (downcase (system-name)) 0 6) "oliver") ;; WORK
        (add-to-list 'default-frame-alist '(font . "Monaco-12"))
        (setq is-home-machine nil)
        (setq org-directory "~/Dropbox/notes/work")
        (setq org-archive-dir "~/Dropbox/notes/work/archive"))
-
       ((equal (system-name) "artemis") ;; LINUX VM
-       (setq is-home-machine nil)
-       (setq org-directory "~/Dropbox/notes")
-       (setq org-archive-dir "~/Dropbox/notes/archive")))
+       (setq is-home-machine nil)))
        
-
 (setq custom-file "~/.emacs.d/custom.el")
 
 (require 'package)
