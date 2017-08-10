@@ -29,8 +29,9 @@
 
 
 ;; more todo states
-(setq org-todo-keywords
-      '((sequence "TODO" "DOING" "DONE")))
+(cond ((eq is-home-machine nil)
+       (setq org-todo-keywords
+             '((sequence "TODO" "DOING" "DONE")))))
 
 ;; suppress extra blank lines in plain lists
 (setq org-list-empty-line-terminates-plain-lists t)
