@@ -27,7 +27,7 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 (require 'epa-file)
-(epa-file-enable)
+;(epa-file-enable)
 
 (setq epa-file-cache-passphrase-for-symmetric-encryption 't)
 (setq epa-file-encrypt-to: "ovi@sofariu.com")
