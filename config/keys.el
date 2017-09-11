@@ -68,3 +68,4 @@
 
 ;; org-mode follow link
 
+(setq evil-escape-key-sequence "jk")

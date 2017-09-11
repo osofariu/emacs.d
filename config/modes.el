@@ -112,3 +112,9 @@
 
 ;(setq debug-on-error t)
 ;(require 'ensime)
+;;Exit insert mode by pressing j and then j quickly
+
+;; jj fast for escape to command mode
+(setq key-chord-two-keys-delay 0.5)
+(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+(key-chord-mode 1)
