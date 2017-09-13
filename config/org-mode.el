@@ -46,7 +46,7 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline (concat org-directory "/main.org") "Tasks")
          "* TODO %?\n %i\n %a")
-        ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
+        ("j" "Journal" entry (file+olp+datetree (lambda () (concat org-directory "/journal.org")))
          "\n
 * <%(now-time)> %i
 ** %?
