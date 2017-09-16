@@ -3,14 +3,14 @@
 (setq inhibit-startup-echo-area-message t)
  
 ;; initial window size
-(add-to-list 'default-frame-alist '(width  . 120))
+(add-to-list 'default-frame-alist '(width  . 140))
 (add-to-list 'default-frame-alist '(height . 65))
 (add-to-list 'default-frame-alist '(left . 790))
 (add-to-list 'default-frame-alist '(top . 0))
 
 ;; favorite themes:  '('clarity 'pierson 'cobalt 'renegade 'resolve 'robin-hood 'julie 'subdued 'railcast))
-;(setq current-theme 'pierson)
 (setq current-theme 'leuven)
+;;(setq current-theme 'eziam-dark)
 (set-face-attribute 'org-agenda-date nil :height 90) ; 9 pt font.           
 
 (load-theme current-theme  t t)

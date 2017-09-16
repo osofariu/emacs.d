@@ -7,7 +7,7 @@
  '(large-file-warning-threshold nil)
  '(package-selected-packages
    (quote
-    ("~/Dropbox/notes/work/practices.org" "~/Dropbox/notes/work/agenda.org" "~/Dropbox/notes/work/ascena.org" "~/Dropbox/notes/work/brands.org" "~/Dropbox/notes/work/checkout.org" "~/Dropbox/notes/work/collaboration.org" "~/Dropbox/notes/work/gtd.org" "~/Dropbox/notes/work/jl.org" "~/Dropbox/notes/work/oms.org" "~/Dropbox/notes/work/people.org" "~/Dropbox/notes/work/pillar.org" "~/Dropbox/notes/work/projects.org" "~/Dropbox/notes/work/retro.org" "~/Dropbox/notes/work/scratch.org" "~/Dropbox/notes/work/tickets.org" "~/Dropbox/notes/work/todo.org" "~/Dropbox/notes/work/transition.org"))))
+    (leuven-theme eziam-theme yasnippet-snippets use-package smooth-scroll sml-mode racket-mode quack powerline-evil pabbrev org noflet nlinum markdown-mode magit key-chord js2-mode htmlize groovy-mode geiser evil-leader ert-expectations ensime el-mock diff-hl color-theme-modern))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

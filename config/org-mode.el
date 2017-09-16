@@ -2,16 +2,17 @@
 ;; make outline pretty by indenting it
 (setq org-startup-indented 't)
 
-;;
+;; see tags
 (setq org-complete-tags-always-offer-all-agenda-tags t)
 
 ;; fontify code blocks
 (setq org-src-fontify-natively t)
 (setq org-src-tab-acts-natively t)
 
-(define-key global-map "\C-cl" 'org-store-link)
 ;; can insert link with <C-C C-L>
+(define-key global-map "\C-cl" 'org-store-link)
 
+;; see agenda
 (define-key global-map "\C-ca" 'org-agenda)
 
 ;; what to log when task done
@@ -57,8 +58,6 @@
          %?
          Added: %U")
         ))
-
-;;"* %?\nEntered on %U\n %i\n %a"
 
 (setq org-agenda-custom-commands
       '(("w" todo "TODO"
@@ -149,15 +148,6 @@
                  (org-remove-inline-images)
                  (org-present-show-cursor)
                  (org-present-read-write)))))
-
-;(defun org-archive-done-tasks ()
-;  (interactive)
-;  (org-map-entries
-;   (lambda ()
-;     (org-archive-subtree)
-;     (setq org-map-continue-from (outline-previous-heading)))
-;   "/DONE" 'tree))
-
 
 
 (font-lock-add-keywords 'org-mode
