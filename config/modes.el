@@ -75,12 +75,12 @@
                         (interactive)
                         (evil-scroll-down nil)))
 ;; powerline
-(require 'powerline)
-(require 'powerline-evil)
+;(require 'powerline)
+;(require 'powerline-evil)
 
 ;(powerline-default-theme)
 ;(powerline-center-theme)
-(powerline-center-evil-theme)
+;(powerline-center-evil-theme)
 ;(powerline-nano-theme)
 ;(powerline-vim-theme)
 
